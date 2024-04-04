@@ -1,0 +1,28 @@
+
+/* Styles for the tooltip */
+[data-gmail-shortcut]:hover::after {
+    content: attr(data-gmail-shortcut);
+    position: absolute;
+    z-index: 1000;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 12px;
+    line-height: 1.4;
+    color: #333;
+}
+
+/* Hide the default Gmail tooltips */
+[data-gmail-shortcut] {
+    pointer-events: none;
+}
+
+[data-gmail-shortcut] * {
+    pointer-events: auto;
+}

@@ -1,0 +1,26 @@
+
+{
+  "manifest_version": 3,
+  "name": "Gmail Shortcut Blocker",
+  "version": "1.0",
+  "description": "Blocks clicks on Gmail elements that have keyboard shortcuts and shows the shortcut in a tooltip.",
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["src/content.js"],
+      "css": ["src/css/content.css"]
+    }
+  ],
+  "action": {
+    "default_popup": "src/html/popup.html"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
